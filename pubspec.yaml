@@ -1,6 +1,6 @@
 name: simple_dart_date_field
 description: Date Field Component
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/simple-dart/date_field
 platforms:
   web:
@@ -8,6 +8,6 @@ platforms:
 environment:
   sdk: '>=2.18.0 <3.0.0'
 
-
 dependencies:
   simple_dart_ui_core: ^0.0.2
+  simple_dart_utils_date_time: ^0.0.1

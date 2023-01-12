@@ -1,8 +1,7 @@
 import 'dart:html';
 
 import 'package:simple_dart_ui_core/simple_dart_ui_core.dart';
-
-import 'date_utils.dart';
+import 'package:simple_dart_utils_date_time/simple_dart_utils_date_time.dart' as utils_date_time;
 
 class DateField extends Component
     with ValueChangeEventSource<DateTime>, MixinDisable
@@ -30,8 +29,7 @@ class DateField extends Component
   }
 
   set value(DateTime value) {
-    final newValue = formatDate(value);
-    element.value = newValue;
+    element.value = value.toIso8601String().substring(0, 16);
   }
 
   @override
@@ -41,7 +39,7 @@ class DateField extends Component
   set state(String newValue) =>
       value = DateTime.fromMillisecondsSinceEpoch((element.valueAsNumber ?? 0).ceil(), isUtc: true);
 
-  String getStringValue() => formatDate(value);
+  String getStringValue() => utils_date_time.formatDate(value);
 
   void focus() {
     element.focus();
