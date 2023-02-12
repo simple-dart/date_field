@@ -29,7 +29,7 @@ class DateField extends Component
   }
 
   set value(DateTime value) {
-    element.value = value.toIso8601String().substring(0, 16);
+    element.value = value.toIso8601String().substring(0, 10);
   }
 
   @override

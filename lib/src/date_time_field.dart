@@ -35,9 +35,7 @@ class DateTimeField extends Component
   }
 
   set value(DateTime value) {
-    var newValue = '';
-    newValue = utils_date_time.formatDateTimeHumIfExist(value);
-    element.value = newValue;
+    element.value = value.toIso8601String().substring(0, 16);
   }
 
   @override
